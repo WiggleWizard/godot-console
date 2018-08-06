@@ -1,0 +1,229 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/console/console_node.gd" type="Script" id=1]
+[ext_resource path="res://addons/console/icon_console.svg" type="Texture" id=2]
+[ext_resource path="res://Addons/console/command_tips.gd" type="Script" id=3]
+
+[node name="Console" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+font_override = null
+console_switch_key = "`"
+use_key_over_action = true
+clear_input_on_close = true
+echo_commands = true
+max_lines = 100
+command_history_size = 20
+enable_command_hinting = true
+enable_help = true
+
+[node name="Background" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.132813, 0.132813, 0.132813, 1 )
+
+[node name="OutputContainer" type="Container" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Output" type="RichTextLabel" parent="OutputContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = true
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = true
+selection_enabled = true
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_fonts" ]
+
+[node name="InputContainer" type="Container" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Input" type="LineEdit" parent="InputContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = true
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label" type="Label" parent="InputContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_right = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = ">"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="CommandTips" type="MarginContainer" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 21.0
+margin_top = -37.0
+margin_right = 29.0
+margin_bottom = -29.0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+script = ExtResource( 3 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags", "custom_styles" ]
+
+[node name="Background" type="ColorRect" parent="CommandTips" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 8.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.145098, 0.172549, 0.231373, 1 )
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="MarginContainer" type="MarginContainer" parent="CommandTips" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 8.0
+margin_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+_sections_unfolded = [ "Grow Direction", "Margin", "Size Flags" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CommandTips/MarginContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment = 2
+_sections_unfolded = [ "Margin", "Size Flags" ]
+
+[connection signal="gui_input" from="InputContainer/Input" to="." method="_on_console_input" binds= [ 2 ]]
+
+
