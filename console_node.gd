@@ -71,14 +71,15 @@ func _ready():
 	if enable_help:
 		register_command("help", funcref(self, "_internal_command_help"));
 
-	$OutputContainer/Output.add_font_override("mono_font", font_override);
-	$OutputContainer/Output.add_font_override("bold_font", font_override);
-	$OutputContainer/Output.add_font_override("bold_italics_font", font_override);
-	$OutputContainer/Output.add_font_override("italics_font", font_override);
-	$OutputContainer/Output.add_font_override("normal_font", font_override);
-
-	$InputContainer/Input.add_font_override("font", font_override);
-	$InputContainer/Label.add_font_override("font", font_override);
+	if(font_override):
+		$OutputContainer/Output.add_font_override("mono_font", font_override);
+		$OutputContainer/Output.add_font_override("bold_font", font_override);
+		$OutputContainer/Output.add_font_override("bold_italics_font", font_override);
+		$OutputContainer/Output.add_font_override("italics_font", font_override);
+		$OutputContainer/Output.add_font_override("normal_font", font_override);
+	
+		$InputContainer/Input.add_font_override("font", font_override);
+		$InputContainer/Label.add_font_override("font", font_override);
 
 func _input(event):
 	if event is InputEventKey:

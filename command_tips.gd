@@ -21,9 +21,11 @@ func show_tips(command_substr, command_list, font):
 	for command in command_list:
 		if(command.begins_with(command_substr)):
 			var new_label = Label.new();
-			new_label.add_font_override("font", font);
 			new_label.set_text(command);
 			_list.add_child(new_label);
+			
+			if(font):
+				new_label.add_font_override("font", font);
 
 			command_matches += 1;
 	if(command_matches == 0):

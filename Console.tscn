@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://addons/console/console_node.gd" type="Script" id=1]
-[ext_resource path="res://addons/console/icon_console.svg" type="Texture" id=2]
-[ext_resource path="res://Addons/console/command_tips.gd" type="Script" id=3]
+[ext_resource path="res://addons/godot-console/console_node.gd" type="Script" id=1]
+[ext_resource path="res://addons/godot-console/icon_console.svg" type="Texture" id=2]
+[ext_resource path="res://addons/godot-console/command_tips.gd" type="Script" id=3]
 
 [node name="Console" type="Control"]
 
@@ -224,6 +224,6 @@ size_flags_vertical = 8
 alignment = 2
 _sections_unfolded = [ "Margin", "Size Flags" ]
 
-[connection signal="gui_input" from="InputContainer/Input" to="." method="_on_console_input" binds= [ 2 ]]
+[connection signal="gui_input" from="InputContainer/Input" to="." method="_on_console_input"]
 
 

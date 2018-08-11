@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_console.svg-ba399920a99b28d99c280c1871f4730a.stex"
+path="res://.import/icon_console.svg-fe5b8d2f6a87a6e961bbc5e2ef8b80c3.stex"
 
 [deps]
 
-source_file="res://Addons/console/icon_console.svg"
-dest_files=[ "res://.import/icon_console.svg-ba399920a99b28d99c280c1871f4730a.stex" ]
+source_file="res://addons/godot-console/icon_console.svg"
+dest_files=[ "res://.import/icon_console.svg-fe5b8d2f6a87a6e961bbc5e2ef8b80c3.stex" ]
 
 [params]
 
